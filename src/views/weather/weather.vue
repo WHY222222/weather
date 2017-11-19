@@ -1,11 +1,14 @@
 <template lang="html">
-  <div class="weather">
+  <div class="weather_wrapper">
   	weather
 		<p>{{weather}}</p>
 		<p>{{recentWeather}}</p>
 
-		<group>
-	    <x-textarea title="title" v-model="word"></x-textarea>
+		
+
+		<group class="user_word_inp_box">
+	    <x-textarea v-model="word"></x-textarea>
+			<x-button>发送</x-button>
 	  </group>
   </div>
 </template>
@@ -55,4 +58,26 @@ export default {
 </script>
 
 <style lang="less">
+	.weather_wrapper{
+		.user_word_inp_box{
+			position: fixed;
+			left: 0;
+			bottom: 0;
+			width: 100%;
+			overflow: hidden;
+			padding-bottom: 4px;
+			.vux-x-textarea{
+				padding: 0 10px;
+				width: 80%;
+				float: left;
+			}
+			textarea{
+				border: 1px #D9D9D9 solid;
+				width: 100%;
+				height: 30px;
+				line-height: 30px;
+			}
+
+		}
+	}
 </style>
